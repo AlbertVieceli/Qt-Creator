@@ -28,7 +28,7 @@ class Ui_JanelaLogin
 public:
     QWidget *centralwidget;
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_2;
@@ -49,21 +49,21 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 140, 101, 18));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 20, 451, 96));
-        verticalLayout = new QVBoxLayout(widget);
+        label->setGeometry(QRect(20, 140, 151, 18));
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 20, 451, 96));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         horizontalLayout->addWidget(label_2);
 
-        txt_username = new QLineEdit(widget);
+        txt_username = new QLineEdit(layoutWidget);
         txt_username->setObjectName(QString::fromUtf8("txt_username"));
 
         horizontalLayout->addWidget(txt_username);
@@ -73,12 +73,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         horizontalLayout_2->addWidget(label_3);
 
-        txt_senha = new QLineEdit(widget);
+        txt_senha = new QLineEdit(layoutWidget);
         txt_senha->setObjectName(QString::fromUtf8("txt_senha"));
         txt_senha->setEchoMode(QLineEdit::Password);
 
@@ -87,7 +87,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        btn_login = new QPushButton(widget);
+        btn_login = new QPushButton(layoutWidget);
         btn_login->setObjectName(QString::fromUtf8("btn_login"));
 
         verticalLayout->addWidget(btn_login);

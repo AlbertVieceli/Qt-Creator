@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>fm_principal</class>
- <widget name="fm_principal" class="QDialog">
+ <widget class="QDialog" name="fm_principal">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +13,38 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="btn_addcont">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="accessibleDescription">
+    <string extracomment="add contato"/>
+   </property>
+   <property name="text">
+    <string>Adcionar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_pesqcont">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pesquisar</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

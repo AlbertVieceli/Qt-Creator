@@ -52,10 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Agenda_v1-0/main.cpp \
-		../Agenda_v1-0/janelalogin.cpp moc_janelalogin.cpp
-OBJECTS       = main.o \
+SOURCES       = ../Agenda_v1-0/fm_principal.cpp \
+		../Agenda_v1-0/main.cpp \
+		../Agenda_v1-0/janelalogin.cpp moc_fm_principal.cpp \
+		moc_janelalogin.cpp
+OBJECTS       = fm_principal.o \
+		main.o \
 		janelalogin.o \
+		moc_fm_principal.o \
 		moc_janelalogin.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -114,6 +118,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../Agenda_v1-0/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -133,7 +138,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../Agenda_v1-0/Agenda_v1-0.pro ../Agenda_v1-0/janelalogin.h ../Agenda_v1-0/main.cpp \
+		../Agenda_v1-0/Agenda_v1-0.pro ../Agenda_v1-0/fm_principal.h \
+		../Agenda_v1-0/janelalogin.h ../Agenda_v1-0/fm_principal.cpp \
+		../Agenda_v1-0/main.cpp \
 		../Agenda_v1-0/janelalogin.cpp
 QMAKE_TARGET  = Agenda_v1-0
 DESTDIR       = 
@@ -143,7 +150,7 @@ TARGET        = Agenda_v1-0
 first: all
 ####### Build rules
 
-Agenda_v1-0: ui_janelalogin.h $(OBJECTS)  
+Agenda_v1-0: ui_fm_principal.h ui_janelalogin.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Agenda_v1-0/Agenda_v1-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -203,6 +210,7 @@ Makefile: ../Agenda_v1-0/Agenda_v1-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -281,6 +289,7 @@ Makefile: ../Agenda_v1-0/Agenda_v1-0.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -316,9 +325,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Agenda_v1-0/janelalogin.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Agenda_v1-0/main.cpp ../Agenda_v1-0/janelalogin.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Agenda_v1-0/janelalogin.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Agenda_v1-0/fm_principal.h ../Agenda_v1-0/janelalogin.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Agenda_v1-0/fm_principal.cpp ../Agenda_v1-0/main.cpp ../Agenda_v1-0/janelalogin.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Agenda_v1-0/fm_principal.ui ../Agenda_v1-0/janelalogin.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -350,10 +359,16 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_janelalogin.cpp
+compiler_moc_header_make_all: moc_fm_principal.cpp moc_janelalogin.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_janelalogin.cpp
+	-$(DEL_FILE) moc_fm_principal.cpp moc_janelalogin.cpp
+moc_fm_principal.cpp: ../Agenda_v1-0/fm_principal.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include '/home/albert/Qt Creator/build-Agenda_v1-0-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/albert/Qt Creator/Agenda_v1-0' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Agenda_v1-0/fm_principal.h -o moc_fm_principal.cpp
+
 moc_janelalogin.cpp: ../Agenda_v1-0/janelalogin.h \
+		../Agenda_v1-0/fm_principal.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include '/home/albert/Qt Creator/build-Agenda_v1-0-Desktop-Debug/moc_predefs.h' -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I'/home/albert/Qt Creator/Agenda_v1-0' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Agenda_v1-0/janelalogin.h -o moc_janelalogin.cpp
@@ -362,9 +377,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_janelalogin.h
+compiler_uic_make_all: ui_fm_principal.h ui_janelalogin.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_janelalogin.h
+	-$(DEL_FILE) ui_fm_principal.h ui_janelalogin.h
+ui_fm_principal.h: ../Agenda_v1-0/fm_principal.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Agenda_v1-0/fm_principal.ui -o ui_fm_principal.h
+
 ui_janelalogin.h: ../Agenda_v1-0/janelalogin.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Agenda_v1-0/janelalogin.ui -o ui_janelalogin.h
@@ -379,12 +398,21 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: ../Agenda_v1-0/main.cpp ../Agenda_v1-0/janelalogin.h
+fm_principal.o: ../Agenda_v1-0/fm_principal.cpp ../Agenda_v1-0/fm_principal.h \
+		ui_fm_principal.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fm_principal.o ../Agenda_v1-0/fm_principal.cpp
+
+main.o: ../Agenda_v1-0/main.cpp ../Agenda_v1-0/janelalogin.h \
+		../Agenda_v1-0/fm_principal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Agenda_v1-0/main.cpp
 
 janelalogin.o: ../Agenda_v1-0/janelalogin.cpp ../Agenda_v1-0/janelalogin.h \
+		../Agenda_v1-0/fm_principal.h \
 		ui_janelalogin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o janelalogin.o ../Agenda_v1-0/janelalogin.cpp
+
+moc_fm_principal.o: moc_fm_principal.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_fm_principal.o moc_fm_principal.cpp
 
 moc_janelalogin.o: moc_janelalogin.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_janelalogin.o moc_janelalogin.cpp

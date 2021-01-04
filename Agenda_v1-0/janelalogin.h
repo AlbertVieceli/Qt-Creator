@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QMessageBox>
+#include "fm_principal.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class JanelaLogin; }
@@ -18,6 +19,9 @@ class JanelaLogin : public QMainWindow
 public:
     JanelaLogin(QWidget *parent = nullptr);
     ~JanelaLogin();
+
+private slots:
+    void on_btn_login_clicked();
 
 private:
     Ui::JanelaLogin *ui;

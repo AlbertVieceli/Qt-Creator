@@ -24,7 +24,7 @@ QT_BEGIN_NAMESPACE
 class Ui_fm_novocontato
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -37,6 +37,7 @@ public:
     QLineEdit *txt_mail;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *btn_gravar;
+    QPushButton *btn_alterar;
     QPushButton *btn_cancelar;
 
     void setupUi(QDialog *fm_novocontato)
@@ -44,20 +45,20 @@ public:
         if (fm_novocontato->objectName().isEmpty())
             fm_novocontato->setObjectName(QString::fromUtf8("fm_novocontato"));
         fm_novocontato->resize(398, 203);
-        widget = new QWidget(fm_novocontato);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 20, 371, 141));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(fm_novocontato);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 20, 371, 141));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         horizontalLayout->addWidget(label);
 
-        txt_nome = new QLineEdit(widget);
+        txt_nome = new QLineEdit(layoutWidget);
         txt_nome->setObjectName(QString::fromUtf8("txt_nome"));
 
         horizontalLayout->addWidget(txt_nome);
@@ -67,12 +68,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        txt_telefone = new QLineEdit(widget);
+        txt_telefone = new QLineEdit(layoutWidget);
         txt_telefone->setObjectName(QString::fromUtf8("txt_telefone"));
 
         horizontalLayout_2->addWidget(txt_telefone);
@@ -82,12 +83,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         horizontalLayout_3->addWidget(label_3);
 
-        txt_mail = new QLineEdit(widget);
+        txt_mail = new QLineEdit(layoutWidget);
         txt_mail->setObjectName(QString::fromUtf8("txt_mail"));
 
         horizontalLayout_3->addWidget(txt_mail);
@@ -97,12 +98,17 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        btn_gravar = new QPushButton(widget);
+        btn_gravar = new QPushButton(layoutWidget);
         btn_gravar->setObjectName(QString::fromUtf8("btn_gravar"));
 
         horizontalLayout_4->addWidget(btn_gravar);
 
-        btn_cancelar = new QPushButton(widget);
+        btn_alterar = new QPushButton(layoutWidget);
+        btn_alterar->setObjectName(QString::fromUtf8("btn_alterar"));
+
+        horizontalLayout_4->addWidget(btn_alterar);
+
+        btn_cancelar = new QPushButton(layoutWidget);
         btn_cancelar->setObjectName(QString::fromUtf8("btn_cancelar"));
 
         horizontalLayout_4->addWidget(btn_cancelar);
@@ -123,6 +129,7 @@ public:
         label_2->setText(QApplication::translate("fm_novocontato", "Telefone", nullptr));
         label_3->setText(QApplication::translate("fm_novocontato", "E-mail", nullptr));
         btn_gravar->setText(QApplication::translate("fm_novocontato", "Gravar", nullptr));
+        btn_alterar->setText(QApplication::translate("fm_novocontato", "Alterar", nullptr));
         btn_cancelar->setText(QApplication::translate("fm_novocontato", "Cancelar", nullptr));
     } // retranslateUi
 

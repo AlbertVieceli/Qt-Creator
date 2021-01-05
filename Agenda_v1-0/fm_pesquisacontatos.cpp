@@ -64,14 +64,19 @@ void fm_pesquisacontatos::on_btn_editar_clicked()
     int id=ui->tw_contatos->item(ui->tw_contatos->currentRow(),0)->text().toInt();
     fm_novocontato f_novoc(this,id);
     f_novoc.exec();
+
     QSqlQuery query;
     query.prepare("select * from tb_contatos where id_contato="+QString::number(id));
     if (query.exec()) {
-        query.first();
         ui->tw_contatos->setItem(linha,1, new QTableWidgetItem(query.value(1).toString()));
         ui->tw_contatos->setItem(linha,2, new QTableWidgetItem(query.value(2).toString()));
         ui->tw_contatos->setItem(linha,3, new QTableWidgetItem(query.value(3).toString()));
     } else {
     }
+
+}
+
+void fm_pesquisacontatos::on_btn_pesquisa_clicked()
+{
 
 }

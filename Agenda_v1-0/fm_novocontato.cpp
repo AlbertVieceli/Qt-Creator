@@ -74,9 +74,15 @@ void fm_novocontato::on_btn_alterar_clicked()
             this->close();
             //ui->txt_nome->setFocus();
 
+
         }else{
             qDebug()<<"Erro ao alterar registro";
         }
     }
 
+}
+
+void fm_novocontato::on_btn_cancelar_clicked()
+{
+    this->close();
 }

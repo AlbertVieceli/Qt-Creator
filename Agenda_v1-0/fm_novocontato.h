@@ -21,6 +21,8 @@ private slots:
 
     void on_btn_alterar_clicked();
 
+    void on_btn_cancelar_clicked();
+
 private:
     Ui::fm_novocontato *ui;
 };

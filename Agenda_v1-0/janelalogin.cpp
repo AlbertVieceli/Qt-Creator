@@ -10,6 +10,7 @@ JanelaLogin::JanelaLogin(QWidget *parent)
     ui->setupUi(this);
     //QSqlDatabase banco=QSqlDatabase::addDatabase("QMYSQL");
     banco.setHostName("127.0.0.1");
+    banco.setPort(3306);
     banco.setUserName("root");
     banco.setPassword("");
     banco.setDatabaseName("teste");

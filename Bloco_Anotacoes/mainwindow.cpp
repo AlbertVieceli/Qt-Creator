@@ -41,3 +41,64 @@ void MainWindow::on_actionAbrir_triggered()
     ui->textEdit->setText(texto);
     arquivo.close();
 }
+
+void MainWindow::on_actionSalvar_Como_triggered()
+{
+    QString filtro="Todos Arquivos (*.*);; Arquivos de texto (*.txt)";
+    QString nome_arquivo=QFileDialog::getSaveFileName(this,"Salvar Como",QDir::homePath(),filtro);
+    local_arquivo=nome_arquivo;
+    QFile arquivo(nome_arquivo);
+    if(!arquivo.open(QFile::WriteOnly | QFile::Text)){
+        QMessageBox::warning(this,"","Arquivo não pode ser salvo");
+        return;
+    }
+    QTextStream saida(&arquivo);
+    QString texto=ui->textEdit->toPlainText();
+    saida << texto;
+    arquivo.flush();
+    arquivo.close();
+}
+
+void MainWindow::on_actionSalvar_triggered()
+{
+    QFile arquivo(local_arquivo);
+    if(!arquivo.open(QFile::WriteOnly | QFile::Text)){
+        QMessageBox::warning(this,"","Arquivo não pode ser salvo");
+        return;
+    }
+    QTextStream saida(&arquivo);
+    QString texto=ui->textEdit->toPlainText();
+    saida << texto;
+    arquivo.flush();
+    arquivo.close();
+}
+
+void MainWindow::on_actionFechar_triggered()
+{
+    close();
+}
+
+void MainWindow::on_actionCopiar_triggered()
+{
+    ui->textEdit->copy();
+}
+
+void MainWindow::on_actionRcortar_triggered()
+{
+    ui->textEdit->cut();
+}
+
+void MainWindow::on_actionColar_triggered()
+{
+    ui->textEdit->paste();
+}
+
+void MainWindow::on_actionDesfazer_triggered()
+{
+    ui->textEdit->undo();
+}
+
+void MainWindow::on_actionRefazer_triggered()
+{
+    ui->textEdit->redo();
+}

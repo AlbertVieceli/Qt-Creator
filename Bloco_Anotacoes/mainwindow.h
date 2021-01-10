@@ -20,6 +20,22 @@ private slots:
 
     void on_actionAbrir_triggered();
 
+    void on_actionSalvar_Como_triggered();
+
+    void on_actionSalvar_triggered();
+
+    void on_actionFechar_triggered();
+
+    void on_actionCopiar_triggered();
+
+    void on_actionRcortar_triggered();
+
+    void on_actionColar_triggered();
+
+    void on_actionDesfazer_triggered();
+
+    void on_actionRefazer_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString local_arquivo;

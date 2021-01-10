@@ -18,6 +18,8 @@ public:
 private slots:
     void on_actionNovo_triggered();
 
+    void on_actionAbrir_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString local_arquivo;

@@ -127,3 +127,13 @@ void MainWindow::on_actionCor_triggered()
     } else {
     }
 }
+
+void MainWindow::on_actionCor_de_Fundo_triggered()
+{
+
+    QColor cor=QColorDialog::getColor(Qt::black,this,"Escolha uma Cor");
+    if (cor.isValid()) {
+        ui->textEdit->setTextBackgroundColor(cor);
+    } else {
+    }
+}

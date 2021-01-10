@@ -40,6 +40,8 @@ private slots:
 
     void on_actionCor_triggered();
 
+    void on_actionCor_de_Fundo_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString local_arquivo;

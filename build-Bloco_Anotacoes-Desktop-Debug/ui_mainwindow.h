@@ -36,6 +36,7 @@ public:
     QAction *actionRefazer;
     QAction *actionFonte;
     QAction *actionCor;
+    QAction *actionCor_de_Fundo;
     QWidget *centralwidget;
     QTextEdit *textEdit;
     QMenuBar *menubar;
@@ -74,6 +75,8 @@ public:
         actionFonte->setObjectName(QString::fromUtf8("actionFonte"));
         actionCor = new QAction(MainWindow);
         actionCor->setObjectName(QString::fromUtf8("actionCor"));
+        actionCor_de_Fundo = new QAction(MainWindow);
+        actionCor_de_Fundo->setObjectName(QString::fromUtf8("actionCor_de_Fundo"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         textEdit = new QTextEdit(centralwidget);
@@ -114,6 +117,7 @@ public:
         menuEditar->addAction(actionColar);
         menuFormatar->addAction(actionFonte);
         menuFormatar->addAction(actionCor);
+        menuFormatar->addAction(actionCor_de_Fundo);
 
         retranslateUi(MainWindow);
 
@@ -135,6 +139,7 @@ public:
         actionRefazer->setText(QApplication::translate("MainWindow", "Refazer", nullptr));
         actionFonte->setText(QApplication::translate("MainWindow", "Fonte", nullptr));
         actionCor->setText(QApplication::translate("MainWindow", "Cor", nullptr));
+        actionCor_de_Fundo->setText(QApplication::translate("MainWindow", "Cor de Fundo", nullptr));
         menuArquivo->setTitle(QApplication::translate("MainWindow", "Arquivo", nullptr));
         menuEditar->setTitle(QApplication::translate("MainWindow", "Editar", nullptr));
         menuSobre->setTitle(QApplication::translate("MainWindow", "Sobre", nullptr));

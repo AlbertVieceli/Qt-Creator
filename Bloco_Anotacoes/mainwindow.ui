@@ -67,6 +67,7 @@
     </property>
     <addaction name="actionFonte"/>
     <addaction name="actionCor"/>
+    <addaction name="actionCor_de_Fundo"/>
    </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEditar"/>
@@ -132,6 +133,11 @@
   <action name="actionCor">
    <property name="text">
     <string>Cor</string>
+   </property>
+  </action>
+  <action name="actionCor_de_Fundo">
+   <property name="text">
+    <string>Cor de Fundo</string>
    </property>
   </action>
  </widget>

@@ -36,6 +36,10 @@ private slots:
 
     void on_actionRefazer_triggered();
 
+    void on_actionFonte_triggered();
+
+    void on_actionCor_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString local_arquivo;

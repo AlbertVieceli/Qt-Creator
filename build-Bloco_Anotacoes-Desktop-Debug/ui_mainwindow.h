@@ -34,12 +34,15 @@ public:
     QAction *actionColar;
     QAction *actionDesfazer;
     QAction *actionRefazer;
+    QAction *actionFonte;
+    QAction *actionCor;
     QWidget *centralwidget;
     QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menuArquivo;
     QMenu *menuEditar;
     QMenu *menuSobre;
+    QMenu *menuFormatar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -67,6 +70,10 @@ public:
         actionDesfazer->setObjectName(QString::fromUtf8("actionDesfazer"));
         actionRefazer = new QAction(MainWindow);
         actionRefazer->setObjectName(QString::fromUtf8("actionRefazer"));
+        actionFonte = new QAction(MainWindow);
+        actionFonte->setObjectName(QString::fromUtf8("actionFonte"));
+        actionCor = new QAction(MainWindow);
+        actionCor->setObjectName(QString::fromUtf8("actionCor"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         textEdit = new QTextEdit(centralwidget);
@@ -82,6 +89,8 @@ public:
         menuEditar->setObjectName(QString::fromUtf8("menuEditar"));
         menuSobre = new QMenu(menubar);
         menuSobre->setObjectName(QString::fromUtf8("menuSobre"));
+        menuFormatar = new QMenu(menubar);
+        menuFormatar->setObjectName(QString::fromUtf8("menuFormatar"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -89,6 +98,7 @@ public:
 
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuEditar->menuAction());
+        menubar->addAction(menuFormatar->menuAction());
         menubar->addAction(menuSobre->menuAction());
         menuArquivo->addAction(actionNovo);
         menuArquivo->addAction(actionAbrir);
@@ -102,6 +112,8 @@ public:
         menuEditar->addAction(actionRcortar);
         menuEditar->addAction(actionCopiar);
         menuEditar->addAction(actionColar);
+        menuFormatar->addAction(actionFonte);
+        menuFormatar->addAction(actionCor);
 
         retranslateUi(MainWindow);
 
@@ -121,9 +133,12 @@ public:
         actionColar->setText(QApplication::translate("MainWindow", "Colar", nullptr));
         actionDesfazer->setText(QApplication::translate("MainWindow", "Desfazer", nullptr));
         actionRefazer->setText(QApplication::translate("MainWindow", "Refazer", nullptr));
+        actionFonte->setText(QApplication::translate("MainWindow", "Fonte", nullptr));
+        actionCor->setText(QApplication::translate("MainWindow", "Cor", nullptr));
         menuArquivo->setTitle(QApplication::translate("MainWindow", "Arquivo", nullptr));
         menuEditar->setTitle(QApplication::translate("MainWindow", "Editar", nullptr));
         menuSobre->setTitle(QApplication::translate("MainWindow", "Sobre", nullptr));
+        menuFormatar->setTitle(QApplication::translate("MainWindow", "Formatar", nullptr));
     } // retranslateUi
 
 };

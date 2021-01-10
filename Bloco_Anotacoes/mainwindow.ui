@@ -61,8 +61,16 @@
      <string>Sobre</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuFormatar">
+    <property name="title">
+     <string>Formatar</string>
+    </property>
+    <addaction name="actionFonte"/>
+    <addaction name="actionCor"/>
+   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEditar"/>
+   <addaction name="menuFormatar"/>
    <addaction name="menuSobre"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -114,6 +122,16 @@
   <action name="actionRefazer">
    <property name="text">
     <string>Refazer</string>
+   </property>
+  </action>
+  <action name="actionFonte">
+   <property name="text">
+    <string>Fonte</string>
+   </property>
+  </action>
+  <action name="actionCor">
+   <property name="text">
+    <string>Cor</string>
    </property>
   </action>
  </widget>

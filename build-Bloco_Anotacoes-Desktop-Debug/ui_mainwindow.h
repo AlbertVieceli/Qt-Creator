@@ -37,6 +37,7 @@ public:
     QAction *actionFonte;
     QAction *actionCor;
     QAction *actionCor_de_Fundo;
+    QAction *actionImprimir;
     QWidget *centralwidget;
     QTextEdit *textEdit;
     QMenuBar *menubar;
@@ -77,6 +78,8 @@ public:
         actionCor->setObjectName(QString::fromUtf8("actionCor"));
         actionCor_de_Fundo = new QAction(MainWindow);
         actionCor_de_Fundo->setObjectName(QString::fromUtf8("actionCor_de_Fundo"));
+        actionImprimir = new QAction(MainWindow);
+        actionImprimir->setObjectName(QString::fromUtf8("actionImprimir"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         textEdit = new QTextEdit(centralwidget);
@@ -108,6 +111,7 @@ public:
         menuArquivo->addAction(actionSalvar);
         menuArquivo->addAction(actionSalvar_Como);
         menuArquivo->addSeparator();
+        menuArquivo->addAction(actionImprimir);
         menuArquivo->addAction(actionFechar);
         menuEditar->addAction(actionDesfazer);
         menuEditar->addAction(actionRefazer);
@@ -140,6 +144,7 @@ public:
         actionFonte->setText(QApplication::translate("MainWindow", "Fonte", nullptr));
         actionCor->setText(QApplication::translate("MainWindow", "Cor", nullptr));
         actionCor_de_Fundo->setText(QApplication::translate("MainWindow", "Cor de Fundo", nullptr));
+        actionImprimir->setText(QApplication::translate("MainWindow", "Imprimir", nullptr));
         menuArquivo->setTitle(QApplication::translate("MainWindow", "Arquivo", nullptr));
         menuEditar->setTitle(QApplication::translate("MainWindow", "Editar", nullptr));
         menuSobre->setTitle(QApplication::translate("MainWindow", "Sobre", nullptr));

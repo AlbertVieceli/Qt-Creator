@@ -43,6 +43,7 @@
     <addaction name="actionSalvar"/>
     <addaction name="actionSalvar_Como"/>
     <addaction name="separator"/>
+    <addaction name="actionImprimir"/>
     <addaction name="actionFechar"/>
    </widget>
    <widget class="QMenu" name="menuEditar">
@@ -138,6 +139,11 @@
   <action name="actionCor_de_Fundo">
    <property name="text">
     <string>Cor de Fundo</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="text">
+    <string>Imprimir</string>
    </property>
   </action>
  </widget>

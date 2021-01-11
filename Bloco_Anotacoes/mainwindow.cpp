@@ -8,7 +8,8 @@
 #include <QFont>
 #include <QColorDialog>
 #include <QColor>
-
+#include <QPrintDialog>
+#include <QPrinter>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -136,4 +137,15 @@ void MainWindow::on_actionCor_de_Fundo_triggered()
         ui->textEdit->setTextBackgroundColor(cor);
     } else {
     }
+}
+
+void MainWindow::on_actionImprimir_triggered()
+{
+    QPrinter imp;
+    imp.setPrinterName("Impressora CFB");
+    QPrintDialog cx_imp(&imp,this);
+    if (cx_imp.exec()==QDialog::Rejected) {
+        return;
+    }
+    ui->textEdit->print(&imp);
 }
